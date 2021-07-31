@@ -200,20 +200,23 @@ console.log(Student.courseName());
 // How do arrow functions affect constructor functions?
 Student.prototype.scope = function() {
   console.log(this);
+
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//    'this' here refers to the Object (Joe) and its scope inside the Student Constructor
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//    'this' here refers to the global scope "Window" not the Student constructor.
 // 3. Explain why "this" is different when an arrow function is used.
-//
+//    'this' inside a basic function declaration refers to the inside scope of the declared function.
+//    'this' inside an  ECMAScript 6 function declaration (=>) refers the outside of the declared function
+//    (global scope "Window").
